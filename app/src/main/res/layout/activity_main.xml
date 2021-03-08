@@ -17,6 +17,8 @@
         android:textColor="@color/dark_grey"
         android:background="#d6d6d6"
         android:maxLength="12"
+        android:padding="10dp"
+        android:gravity="right|center_vertical|bottom"
          />
     <!-- Row1 -->
     <LinearLayout
@@ -284,7 +286,7 @@
             android:backgroundTint="@color/light_grey"
             android:text="="
             android:textColor="@color/dark_grey"
-            android:onClick="onDigit"
+            android:onClick="onEqual"
             />
     </LinearLayout>
 
