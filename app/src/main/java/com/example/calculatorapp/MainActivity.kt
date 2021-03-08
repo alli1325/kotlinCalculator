@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.ArithmeticException
+import java.time.Duration
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,15 +40,15 @@ class MainActivity : AppCompatActivity() {
 
     fun onEqual(view: View){
         if(lastNumeric){
-            var tvValue = tvInput.text.toString()
+            var tvValue = tvInput.text
             var prefix = ""
             try{
                 if(tvValue.startsWith("-")){
                     prefix = "-"
-                    tvValue = tvValue.substring(1)
+                    tvValue = tvInput.text.substring(1)
                 }
                 if(tvValue.contains("-")){
-                    val splitValue = tvInput.text.split(" - ")
+                    val splitValue = tvValue.split(" - ")
                     var one = splitValue[0]
                     val two = splitValue[1]
                     if(!prefix.isEmpty()){
@@ -55,9 +56,10 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     tvInput.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
+                    prefix = ""
 
                 }else if(tvValue.contains("+")){
-                    val splitValue = tvInput.text.split(" + ")
+                    val splitValue = tvValue.split(" + ")
                     var one = splitValue[0]
                     val two = splitValue[1]
                     if(!prefix.isEmpty()){
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     tvInput.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
 
                 }else if(tvValue.contains("*")){
-                    val splitValue = tvInput.text.split(" * ")
+                    val splitValue = tvValue.split(" * ")
                     var one = splitValue[0]
                     val two = splitValue[1]
                     if(!prefix.isEmpty()){
@@ -77,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                     tvInput.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
 
                 }else if(tvValue.contains("/")){
-                    val splitValue = tvInput.text.split(" / ")
+                    val splitValue = tvValue.split(" / ")
                     var one = splitValue[0]
                     val two = splitValue[1]
                     if(!prefix.isEmpty()){
