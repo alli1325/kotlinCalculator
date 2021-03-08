@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:text=""
+        android:textSize="25dp"
         android:textColor="@color/dark_grey"
         android:background="#d6d6d6"
         android:maxLength="12"
@@ -249,7 +250,7 @@
             android:layout_marginRight="1dp"
             android:text="CLR"
             android:textColor="@color/dark_grey"
-            android:onClick="onDigit"
+            android:onClick="onClear"
 
             />
 
